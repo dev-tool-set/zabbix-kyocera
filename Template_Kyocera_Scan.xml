@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>4.4</version>
+    <date>2020-04-13T19:12:15Z</date>
+    <groups>
+        <group>
+            <name>Kyocera Ecosys M2040dn</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template_Kyocera_Scan</template>
+            <name>Template_Kyocera_Scan</name>
+            <groups>
+                <group>
+                    <name>Kyocera Ecosys M2040dn</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Kyocera_Inventory_Scan</name>
+                </application>
+                <application>
+                    <name>Kyocera_Monitoring_Scan</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Страниц откопировано</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>1.3.6.1.4.1.1347.42.3.1.3.1.1.2</snmp_oid>
+                    <key>copy.device</key>
+                    <delay>1800</delay>
+                    <applications>
+                        <application>
+                            <name>Kyocera_Monitoring_Scan</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Сколько бумаги помещается в лоток</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>.1.3.6.1.4.1.1347.42.23.1.16.0</snmp_oid>
+                    <key>paper.device</key>
+                    <delay>86400</delay>
+                    <trends>184d</trends>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>86400</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Отсканировано страниц</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>.1.3.6.1.4.1.1347.42.3.1.4.1.1.1</snmp_oid>
+                    <key>scan.device</key>
+                    <delay>1800</delay>
+                    <applications>
+                        <application>
+                            <name>Kyocera_Monitoring_Scan</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Поддержка сканирования</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>.1.3.6.1.4.1.1347.46.5.1.1.5.3</snmp_oid>
+                    <key>scaner.device</key>
+                    <delay>86400</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>86400</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Всего отсканировано и копировано страниц</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>.1.3.6.1.4.1.1347.46.10.1.1.5.3</snmp_oid>
+                    <key>scantotal.device</key>
+                    <delay>3600</delay>
+                    <applications>
+                        <application>
+                            <name>Kyocera_Monitoring_Scan</name>
+                        </application>
+                    </applications>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>

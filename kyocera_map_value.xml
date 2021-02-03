@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2021-02-03T10:16:33Z</date>
+    <value_maps>
+        <value_map>
+            <name>Kyocera_MFD_Value</name>
+            <mappings>
+                <mapping>
+                    <value>10001</value>
+                    <newvalue>Готов к работе</newvalue>
+                </mapping>
+                <mapping>
+                    <value>35078</value>
+                    <newvalue>Режим ожидания</newvalue>
+                </mapping>
+                <mapping>
+                    <value>42001</value>
+                    <newvalue>Замятие</newvalue>
+                </mapping>
+                <mapping>
+                    <value>44001</value>
+                    <newvalue>Закройте переднюю крышку.</newvalue>
+                </mapping>
+                <mapping>
+                    <value>46101</value>
+                    <newvalue>Закончился тонер</newvalue>
+                </mapping>
+                <mapping>
+                    <value>46402</value>
+                    <newvalue>Неоригинальный картридж</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+    </value_maps>
+</zabbix_export>
